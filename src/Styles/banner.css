@@ -1,0 +1,30 @@
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;      /* maintains aspect ratio */
+  display: block;
+  object-fit: cover;  /* image covers container */
+}
+
+/* Responsive heights (optional, maintains aspect ratio) */
+@media screen and (min-width: 1024px) {
+  .banner-img {
+    height: 400px;   /* desktop */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .banner-img {
+    height: 300px;   /* tablet */
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .banner-img {
+    height: 200px;   /* mobile */
+  }
+}

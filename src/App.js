@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Banner from "./components/Banner";
+import MainBody from "./components/MainBody";
+
+// Complaint Pages
+import GarbageCom from "./Features/GarbageCom";
+import StreetlightCom from "./Features/StreetlightCom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+
+        {/* Home Route */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Banner />     
+              <MainBody />   
+            </>
+          }
+        />
+
+        {/* Garbage Complaint Page */}
+        <Route
+          path="/garbage"
+          element={
+            <>
+              <Header />
+              <GarbageCom />
+            </>
+          }
+        />
+
+        {/* Streetlight Failures Page */}
+        <Route
+          path="/streetlight"
+          element={
+            <>
+              <Header />
+              <StreetlightCom />
+            </>
+          }
+        />
+
+      </Routes>
+    </Router>
   );
 }
 

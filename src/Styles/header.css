@@ -1,0 +1,74 @@
+/* Navbar wrapper */
+.navbar {
+  @apply flex justify-between items-center px-6 py-4 bg-white shadow-md relative;
+}
+
+/* Logo */
+.logo {
+  @apply text-xl font-extrabold;
+}
+
+/* Desktop Nav Links */
+.nav-links {
+  @apply hidden md:flex items-center ml-8; /* only desktop visible */
+}
+
+.nav-links a {
+  @apply mx-3 text-gray-700 font-medium relative mt-2; /* little top margin */
+}
+
+.nav-links a::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-[2px] bg-green-600 transition-all duration-300;
+}
+
+.nav-links a:hover::after {
+  @apply w-full;
+}
+
+/* ✅ Buttons (same size now) */
+.login-btn,
+.signup-btn {
+  @apply px-5 py-2 rounded-full text-white font-bold transition duration-300;
+  min-width: 110px; /* ensures equal width */
+  text-align: center;
+}
+
+/* Desktop spacing (thoda gap zyada kiya) */
+.login-btn {
+  @apply bg-green-600 hover:bg-green-700 ml-6; /* gap added */
+}
+
+.signup-btn {
+  @apply bg-orange-500 hover:bg-orange-600 ml-4; /* gap after login */
+}
+
+/* Mobile menu wrapper */
+.mobile-menu {
+  @apply fixed top-0 right-0 h-full w-64 bg-white shadow-lg flex flex-col items-start px-6 pt-20 space-y-6 transform translate-x-full transition-transform duration-500 ease-in-out z-40;
+}
+
+/* When open */
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+/* Mobile links */
+.mobile-menu a {
+  @apply text-gray-800 font-medium text-lg relative;
+}
+
+.mobile-menu a::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-[2px] bg-green-600 transition-all duration-300;
+}
+
+.mobile-menu a:hover::after {
+  @apply w-full;
+}
+
+/* ✅ Buttons inside mobile menu (left aligned) */
+.mobile-menu .login-btn,
+.mobile-menu .signup-btn {
+  @apply w-full ml-0 text-center;
+}
