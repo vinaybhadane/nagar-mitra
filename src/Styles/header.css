@@ -10,11 +10,11 @@
 
 /* Desktop Nav Links */
 .nav-links {
-  @apply hidden md:flex items-center ml-8; /* only desktop visible */
+  @apply hidden md:flex items-center ml-8;
 }
 
 .nav-links a {
-  @apply mx-3 text-gray-700 font-medium relative mt-2; /* little top margin */
+  @apply mx-3 text-gray-700 font-medium relative mt-2;
 }
 
 .nav-links a::after {
@@ -26,21 +26,34 @@
   @apply w-full;
 }
 
-/* ✅ Buttons (same size now) */
+/* ✅ Auth Buttons (same size now) */
 .login-btn,
-.signup-btn {
-  @apply px-5 py-2 rounded-full text-white font-bold transition duration-300;
-  min-width: 110px; /* ensures equal width */
+.signup-btn,
+.profile-btn,
+.logout-btn {
+  @apply px-5 py-2 rounded-full font-bold transition duration-300 flex items-center justify-center gap-2;
+  min-width: 130px; /* equal width */
   text-align: center;
 }
 
-/* Desktop spacing (thoda gap zyada kiya) */
+/* Login button */
 .login-btn {
-  @apply bg-green-600 hover:bg-green-700 ml-6; /* gap added */
+  @apply bg-green-600 hover:bg-green-700 text-white ml-6;
 }
 
+/* Signup button */
 .signup-btn {
-  @apply bg-orange-500 hover:bg-orange-600 ml-4; /* gap after login */
+  @apply bg-orange-500 hover:bg-orange-600 text-white ml-4;
+}
+
+/* ✅ Profile button (same as login color) */
+.profile-btn {
+  @apply bg-green-600 hover:bg-green-700 text-white ml-6;
+}
+
+/* ✅ Logout button (red) */
+.logout-btn {
+  @apply bg-red-500 hover:bg-red-600 text-white ml-4;
 }
 
 /* Mobile menu wrapper */
@@ -67,8 +80,10 @@
   @apply w-full;
 }
 
-/* ✅ Buttons inside mobile menu (left aligned) */
+/* ✅ Buttons inside mobile menu */
 .mobile-menu .login-btn,
-.mobile-menu .signup-btn {
+.mobile-menu .signup-btn,
+.mobile-menu .profile-btn,
+.mobile-menu .logout-btn {
   @apply w-full ml-0 text-center;
 }
